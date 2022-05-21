@@ -1,5 +1,21 @@
+<script>
+    export let title = "ayo?";
 
-<h1>Hi, I'm [Mo]</h1>
+    import { fly } from "svelte/transition";
+    import { circOut } from "svelte/easing";
+    import { onMount } from "svelte";
+
+    let ready = false;
+
+    onMount(() => {
+        ready = true;
+    });
+
+</script>
+
+{#if ready}
+    <h1 in:fly={{duration: 500, y: -20, easing: circOut}}>{title}</h1>
+{/if}
 
 <style>
     h1 {

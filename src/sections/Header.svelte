@@ -5,8 +5,8 @@
 </script>
 
 <div class="header">
-    <HeaderTitle/>
-    <HeaderSubTitle/>
+    <HeaderTitle title={"Hi, I'm [Mo]"}/>
+    <HeaderSubTitle subTitle={"Aspiring software engineer"}/>
     <HeaderNavigation/>
 </div>
 
