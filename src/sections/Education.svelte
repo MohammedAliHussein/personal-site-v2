@@ -7,21 +7,16 @@
 <div class="education">
     <HeaderTitle title={"Education"}/>
     <HeaderSubTitle subTitle={"Curtin University - Software Engineering (B Comp)"} />
-    <h5>Course Weighted Average: 82%</h5> 
 </div>
 
 <style>
     .education {
         width: 100%;
-        height: 50vh;
+        height: 20vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         font-size: 14px;
-    }
-
-    h5 {
-        margin: 10px;
     }
 </style>
