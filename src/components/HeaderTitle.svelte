@@ -14,12 +14,24 @@
 </script>
 
 {#if ready}
-    <h1 in:fly={{duration: 500, y: -20, easing: circOut}}>{title}</h1>
+    <h1>{title}</h1>
 {/if}
 
 <style>
     h1 {
         font-size: 32px;
         font-weight: 700;
+        animation: slideIn 0.5s cubic-bezier(0, 0.55, 0.45, 1);
     }
+
+    @keyframes slideIn {
+        0% {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    } 
 </style>

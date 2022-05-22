@@ -1,9 +1,8 @@
 <script>
     import HeaderTitle from "../components/HeaderTitle.svelte";
     import HeaderSubTitle from "../components/HeaderSubTitle.svelte";
-    import { fly, fade } from "svelte/transition";
-    import { circOut } from "svelte/easing";
 </script>
+
 
 <div class="education">
     <HeaderTitle title={"Education"}/>

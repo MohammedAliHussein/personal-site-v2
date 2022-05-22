@@ -1,8 +1,6 @@
 <script>
-    export let subTitle;
+    export let subTitle = "test";
 
-    import { fly } from "svelte/transition";
-    import { circOut } from "svelte/easing";
     import { onMount } from "svelte";
 
     let ready = false;
@@ -14,7 +12,7 @@
 </script>
 
 {#if ready}
-    <h3 in:fly={{duration: 500, y: -20, easing: circOut, delay: 300}}>{subTitle}</h3>
+    <h3>{subTitle}</h3>
 {/if}
 
 <style>
@@ -22,5 +20,23 @@
         font-size: 16px;
         font-weight: 500;
         margin: 10px;
+        animation: slideIn 0.8s cubic-bezier(0, 0.55, 0.45, 1);
     }
+
+    @keyframes slideIn {
+        0% {
+            opacity: 0;
+            transform: translateY(-20px);
+            display: none;
+        }
+        60% { 
+            opacity: 0;
+            transform: translateY(-20px);
+            display: contents;
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    } 
 </style>

@@ -2,12 +2,14 @@
     import HeaderTitle from "../components/HeaderTitle.svelte";
     import HeaderSubTitle from "../components/HeaderSubTitle.svelte";
     import HeaderNavigation from "../components/HeaderNavigation.svelte";
+    import HeaderDownArrow from "../components/HeaderDownArrow.svelte";
 </script>
 
 <div class="header">
     <HeaderTitle title={"Hi, I'm [Mo]"}/>
     <HeaderSubTitle subTitle={"Aspiring software engineer"}/>
-    <HeaderNavigation/>
+    <HeaderDownArrow/>
+    <!-- <HeaderNavigation/> -->
 </div>
 
 <style>
