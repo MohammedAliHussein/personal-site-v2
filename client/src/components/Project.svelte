@@ -46,7 +46,7 @@
         height: 250px;
         filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.25));
         margin: 20px;
-        outline: 1px solid rgba(72, 72, 72, 0.08);
+        outline: 1px solid rgba(72, 72, 72, 0.1);
     }
 
     @keyframes slideIn {
