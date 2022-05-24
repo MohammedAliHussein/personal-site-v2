@@ -7,13 +7,16 @@
 	let ready = false;
 	let projectData = [];
 	let scrollY = window.scrollY;
-	$: showingProjects = scrollY >= (window.innerHeight / 3);
+
+	$: showingEducation = scrollY >= (window.innerHeight / 3);
+	$: showingProjects = scrollY >= (window.innerHeight);
 
 	window.addEventListener("scroll", () => {
-		if(!showingProjects) {
+		if(!showingProjects || !showingEducation) {
 			scrollY = window.scrollY;
 		}
 		console.log(scrollY);
+		console.log(scrollY >= (window.innerHeight * 1));
 	})
 
 	onMount(() => {
@@ -55,16 +58,18 @@
 <main>
 {#if ready}
 	<Header/>
+	{#if showingEducation}
+		<Education/>
+	{/if}
 	{#if showingProjects}
 		<Projects projectData={projectData}/>
 	{/if}
-	<!-- <Education/> -->
 	<!-- <Technologies/> --> 
 {/if}
 </main>
 
 <style>
 	main {
-		height: 150vh;
+		height: 200vh;
 	}
 </style>

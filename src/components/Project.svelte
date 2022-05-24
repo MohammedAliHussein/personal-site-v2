@@ -12,28 +12,23 @@
     export let link = "";
     export let index = 0;
 
-    $: dynamicIndex = index;
-
     let ready = false;
 
     onMount(() => {
         ready = true;
-        if(dynamicIndex !== -1) {
-            // document.querySelector("project 1").style.animation = `slideIn 0.5s cubic-bezier(0, 0.55, 0.45, 1) ${index * 0.3}s`;
-        }
     });
 
 </script>
 
 {#if ready}
-    <div class="project" in:fly={{duration: 800, y: -20, delay: index * 300}}>
+    <div class="project" in:fly={{duration: 800, y: -20, delay: (index * 300) + 300}}>
         <ProjectTitle title={title}/>
         <div class="links">
             {#if github !== ""}
-                <i class="fa-brands fa-github" on:click={window.open(github)}></i>
+                <i class="fa-brands fa-github fa-lg" on:click={window.open(github)}></i>
             {/if}
             {#if link !== null}
-                <i class="fa-solid fa-up-right-from-square"></i>    
+                <i class="fa-solid fa-up-right-from-square fa-lg"></i>    
             {/if}
         </div>
         <ProjectDescription description={description}/>
@@ -49,10 +44,8 @@
         flex-direction: column;
         width: 400px;
         height: 250px;
-        /* background-color:rgb(16, 16, 16); */
-        filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.3));
+        filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.25));
         margin: 20px;
-        /* animation: slideIn 0.5s cubic-bezier(0, 0.55, 0.45, 1); */
     }
 
     @keyframes slideIn {

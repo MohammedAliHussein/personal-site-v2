@@ -5,17 +5,17 @@
 
 
 <div class="education">
-    <HeaderTitle title={"Education"}/>
+    <HeaderTitle title={"[Education]"}/>
     <HeaderSubTitle subTitle={"Curtin University - Software Engineering (B Comp)"} />
 </div>
 
 <style>
     .education {
         width: 100%;
-        height: 20vh;
+        height: 50vh;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content:flex-start;
         align-items: center;
         font-size: 14px;
     }
