@@ -3,7 +3,6 @@
     import HeaderSubTitle from "../components/HeaderSubTitle.svelte";
 </script>
 
-
 <div class="education">
     <HeaderTitle title={"[Education]"}/>
     <HeaderSubTitle subTitle={"Curtin University - Software Engineering (B Comp)"} />

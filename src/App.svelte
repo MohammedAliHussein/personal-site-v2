@@ -1,4 +1,5 @@
 <script>
+
 	import Header from "./sections/Header.svelte";
 	import Projects from "./sections/Projects.svelte";
 	import Education from "./sections/Education.svelte";
@@ -6,18 +7,20 @@
 
 	let ready = false;
 	let projectData = [];
-	let scrollY = window.scrollY;
+	let educationScrollY = window.scrollY;
+	let projectsScrollY = window.scrollY;
 
-	$: showingEducation = scrollY >= (window.innerHeight / 3);
-	$: showingProjects = scrollY >= (window.innerHeight);
+	$: showingEducation = educationScrollY >= (window.innerHeight / 3);
+	$: showingProjects = projectsScrollY >= (window.innerHeight);
 
 	window.addEventListener("scroll", () => {
-		if(!showingProjects || !showingEducation) {
-			scrollY = window.scrollY;
+		if(!showingProjects) {
+			projectsScrollY = window.scrollY;
 		}
-		console.log(scrollY);
-		console.log(scrollY >= (window.innerHeight * 1));
-	})
+		if(!showingEducation) {
+			educationScrollY = window.scrollY;
+		}
+	});
 
 	onMount(() => {
 		projectData = [
@@ -43,7 +46,7 @@
 				link: "",
 			},
 			{
-				title: "Disk Scheduler Simulation",
+				title: "Disk Scheduler Visualisation",
 				description: "Visual simulation of disk scheduling algorithms with seek time calculations.",
 				technologies: ["Svelte", "CSS", "RollupJS", "Express", "NodeJS", "NPM", "Git"],
 				github: "https://github.com/MohammedAliHussein/disk-scheduling-site",
