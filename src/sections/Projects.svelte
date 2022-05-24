@@ -8,8 +8,8 @@
 <div class="projects-section">
     <HeaderTitle title={"[Projects]"}/>
     <div class="projects">
-        {#each projectData as project}
-            <Project {...project}/>
+        {#each projectData as project, i}
+            <Project {...project} index={i}/>
         {/each}
     </div>
 </div>

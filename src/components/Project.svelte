@@ -1,29 +1,45 @@
 <script>
     import ProjectTitle from "./ProjectTitle.svelte";
+    import ProjectDescription from "./ProjectDescription.svelte";
     import ProjectTechnologies from "./ProjectTechnologies.svelte";
-import HeaderTitle from "./HeaderTitle.svelte";
+    import { fly } from "svelte/transition";
+    import { onMount } from "svelte";
 
     export let title = "title";
     export let description = "description";
     export let technologies = [];
     export let github = "";
     export let link = "";
+    export let index = 0;
+
+    $: dynamicIndex = index;
+
+    let ready = false;
+
+    onMount(() => {
+        ready = true;
+        if(dynamicIndex !== -1) {
+            // document.querySelector("project 1").style.animation = `slideIn 0.5s cubic-bezier(0, 0.55, 0.45, 1) ${index * 0.3}s`;
+        }
+    });
 
 </script>
 
-<div class="project">
-    <ProjectTitle title={title}/>
-    <div class="links">
-        {#if github !== ""}
-            <i class="fa-brands fa-github" on:click={window.open(github, '_blank').focus()}></i>
-        {/if}
-        {#if link !== null}
-            <i class="fa-solid fa-up-right-from-square"></i>    
-        {/if}
+{#if ready}
+    <div class="project" in:fly={{duration: 800, y: -20, delay: index * 300}}>
+        <ProjectTitle title={title}/>
+        <div class="links">
+            {#if github !== ""}
+                <i class="fa-brands fa-github" on:click={window.open(github)}></i>
+            {/if}
+            {#if link !== null}
+                <i class="fa-solid fa-up-right-from-square"></i>    
+            {/if}
+        </div>
+        <ProjectDescription description={description}/>
+        <ProjectTechnologies technologies={technologies}/>
     </div>
-    <!-- <ProjectDescription description={description}> -->
-    <ProjectTechnologies technologies={technologies}/>
-</div>
+{/if}
 
 <style>
     .project {
@@ -33,10 +49,22 @@ import HeaderTitle from "./HeaderTitle.svelte";
         flex-direction: column;
         width: 400px;
         height: 250px;
-        background-color:rgb(14, 14, 14);
-        filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.1));
+        /* background-color:rgb(16, 16, 16); */
+        filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.3));
         margin: 20px;
+        /* animation: slideIn 0.5s cubic-bezier(0, 0.55, 0.45, 1); */
     }
+
+    @keyframes slideIn {
+        0% {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    } 
 
     .links {
         height: fit-content;

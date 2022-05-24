@@ -34,7 +34,7 @@
 			},
 			{
 				title: "Personal Site V1",
-				description: "Personal website to display my works. First attempt at web development. Learned the basics of web development practices, networking mechanisms, internet's inner workings, optimisation techniques and languages.",
+				description: "First iteration of my site. Learned the basics of web development practices, networking mechanisms and languages.",
 				technologies: ["HTML", "SCSS", "JavaScript", "RollupJS", "Express", "NodeJS", "NPM", "Git"],
 				github: "https://github.com/MohammedAliHussein/personal-site-v1",
 				link: "",
