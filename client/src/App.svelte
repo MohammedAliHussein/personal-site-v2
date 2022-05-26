@@ -1,5 +1,4 @@
 <script>
-
 	import Header from "./sections/Header.svelte";
 	import Education from "./sections/Education.svelte";
 	import Projects from "./sections/Projects.svelte";
