@@ -1,7 +1,5 @@
 <script>
-
     export let description = "";
-
 </script>
 
 <div class="description">
