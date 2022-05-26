@@ -9,7 +9,9 @@
     <HeaderTitle title={"[Projects]"}/>
     <div class="projects">
         {#each projectData as project, i}
-            <Project {...project} index={i}/>
+            {#if !project.hidden}
+                <Project {...project} index={i}/>
+            {/if}
         {/each}
     </div>
 </div>
