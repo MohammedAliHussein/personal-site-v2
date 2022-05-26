@@ -50,17 +50,6 @@
         font-size: 13px;
         line-height: 25px;
         margin: 0px 10px;
-        /* animation: slideIn 0.5s cubic-bezier(0, 0.55, 0.45, 1) 1s; */
     }
 
-    @keyframes slideIn {
-        0% {
-            opacity: 0;
-            transform: translateY(-20px);
-        }
-        100% {
-            opacity: 1;
-            transform: translateY(0px);
-        }
-    } 
 </style>

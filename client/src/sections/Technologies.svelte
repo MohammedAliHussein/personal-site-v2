@@ -65,12 +65,11 @@
 <style>
     .technologies {
         width: 100%;
-        height: fit-content;
+        height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        margin-top: 10vh;
-        margin-bottom: 30vh;
+        /* margin-top: 10vh; */
     }
 </style>

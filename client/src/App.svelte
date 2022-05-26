@@ -16,7 +16,7 @@
 
 	$: showingEducation = educationScrollY >= (window.innerHeight / 3);
 	$: showingProjects = projectsScrollY >= (window.innerHeight);
-	$: showingTechnologies = technologiesScrollY >= (window.innerHeight * 1.8);
+	$: showingTechnologies = technologiesScrollY >= (window.innerHeight * 2.1);
 
 	window.addEventListener("scroll", () => {
 		if(!showingProjects) {
