@@ -1,8 +1,10 @@
 <script>
 
 	import Header from "./sections/Header.svelte";
-	import Projects from "./sections/Projects.svelte";
 	import Education from "./sections/Education.svelte";
+	import Projects from "./sections/Projects.svelte";
+	import Technologies from "./sections/Technologies.svelte";
+
 	import { onMount } from "svelte";
 	import axios from "axios";
 
@@ -10,9 +12,11 @@
 	let projectData = [];
 	let educationScrollY = window.scrollY;
 	let projectsScrollY = window.scrollY;
+	let technologiesScrollY = window.scrollY;
 
 	$: showingEducation = educationScrollY >= (window.innerHeight / 3);
 	$: showingProjects = projectsScrollY >= (window.innerHeight);
+	$: showingTechnologies = technologiesScrollY >= (window.innerHeight * 1.8);
 
 	window.addEventListener("scroll", () => {
 		if(!showingProjects) {
@@ -21,12 +25,15 @@
 		if(!showingEducation) {
 			educationScrollY = window.scrollY;
 		}
+		if(!showingTechnologies) {
+			technologiesScrollY = window.scrollY;
+		}
 	});
 
 	onMount(async () => {
-		let bulkData = (await axios.get("http://localhost:3000/api/v1/projects")).data;
+		const bulkData = (await axios.get("http://localhost:3000/api/v1/projects")).data;
 
-		let keys = Object.keys(bulkData);
+		const keys = Object.keys(bulkData);
 
 		keys.forEach((key) => {
 			projectData.push(bulkData[key].project);
@@ -46,12 +53,14 @@
 	{#if showingProjects}
 		<Projects projectData={projectData}/>
 	{/if}
-	<!-- <Technologies/> --> 
+	{#if showingTechnologies}
+		<Technologies/> 
+	{/if}
 {/if}
 </main>
 
 <style>
 	main {
-		height: 200vh;
+		height: 300vh;
 	}
 </style>

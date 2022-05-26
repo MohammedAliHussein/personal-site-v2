@@ -8,7 +8,6 @@
     onMount(() => {
         ready = true;
     });
-
 </script>
 
 {#if ready}
