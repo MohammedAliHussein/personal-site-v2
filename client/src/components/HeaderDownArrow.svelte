@@ -17,7 +17,6 @@
     i {
         margin-top: 10px;
         animation: waitFor 2.8s cubic-bezier(0, 0.55, 0.45, 1) infinite;
-        cursor: pointer;
     }
 
     @keyframes waitFor {

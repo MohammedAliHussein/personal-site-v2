@@ -1,8 +1,6 @@
 <script>
     export let title = "ayo?";
 
-    import { fly } from "svelte/transition";
-    import { circOut } from "svelte/easing";
     import { onMount } from "svelte";
 
     let ready = false;

@@ -33,6 +33,7 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        margin-top: 10px;
     }
 
     .technology-type-list {
@@ -47,7 +48,7 @@
     h4 {
         background: none;
         font-weight: 400;
-        font-size: 13px;
+        font-size: 12px;
         line-height: 25px;
         margin: 0px 10px;
     }
