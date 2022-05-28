@@ -1,8 +1,8 @@
 <script>
-	import Header from "./sections/Header.svelte";
-	import Education from "./sections/Education.svelte";
-	import Projects from "./sections/Projects.svelte";
-	import Technologies from "./sections/Technologies.svelte";
+	import Header from "../sections/Header.svelte";
+	import Education from "../sections/Education.svelte";
+	import Projects from "../sections/Projects.svelte";
+	import Technologies from "../sections/Technologies.svelte";
 
 	import { onMount } from "svelte";
 	import axios from "axios";
@@ -40,23 +40,22 @@
 
 		ready = true;
 	});
-
 </script>
 
-<main>
 {#if ready}
-	<Header/>
-	{#if showingEducation}
-		<Education/>
-	{/if}
-	{#if showingProjects}
-		<Projects projectData={projectData}/>
-	{/if}
-	{#if showingTechnologies}
-		<Technologies/> 
-	{/if}
+	<main>
+		<Header/>
+		{#if showingEducation}
+			<Education/>
+		{/if}
+		{#if showingProjects}
+			<Projects projectData={projectData}/>
+		{/if}
+		{#if showingTechnologies}
+			<Technologies/> 
+		{/if}
+	</main>
 {/if}
-</main>
 
 <style>
 	main {

@@ -2,6 +2,7 @@
     import ProjectTitle from "./ProjectTitle.svelte";
     import ProjectDescription from "./ProjectDescription.svelte";
     import ProjectTechnologies from "./ProjectTechnologies.svelte";
+
     import { fly } from "svelte/transition";
     import { onMount } from "svelte";
 
