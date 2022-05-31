@@ -28,8 +28,8 @@
             {#if github !== ""}
                 <i class="fa-brands fa-github fa-lg" on:click={window.open(github)}></i>
             {/if}
-            {#if link !== null}
-                <i class="fa-solid fa-up-right-from-square fa-lg"></i>    
+            {#if link !== ""}
+                <i class="fa-solid fa-up-right-from-square fa-lg" on:click={window.open(link)}></i>    
             {/if}
         </div>
         <ProjectDescription description={description}/>
