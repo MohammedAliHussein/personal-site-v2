@@ -12,6 +12,7 @@
     export let github = "";
     export let link = "";
     export let index = 0;
+    export let inProgress = false;
 
     let ready = false;
 
@@ -26,10 +27,13 @@
         <ProjectTitle title={title}/>
         <div class="links">
             {#if github !== ""}
-                <i class="fa-brands fa-github fa-lg" on:click={window.open(github)}></i>
+                <i title="Open in new tab" class="fa-brands fa-github fa-lg" on:click={window.open(github)}></i>
             {/if}
             {#if link !== ""}
-                <i class="fa-solid fa-up-right-from-square fa-lg" on:click={window.open(link)}></i>    
+                <i title="Open in new tab" class="fa-solid fa-up-right-from-square fa-lg" on:click={window.open(link)}></i>    
+            {/if}
+            {#if inProgress}
+                <i id="hammer" title="In progress" class="fa-solid fa-hammer fa-fade"></i>
             {/if}
         </div>
         <ProjectDescription description={description}/>
@@ -72,5 +76,9 @@
 
     i {
         cursor: pointer;
+    }
+
+    #hammer {
+        cursor: auto;
     }
 </style>
