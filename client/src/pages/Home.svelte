@@ -59,6 +59,6 @@
 
 <style>
 	main {
-		height: 320vh;
+		height: 250vh;
 	}
 </style>
