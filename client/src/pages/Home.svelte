@@ -15,7 +15,7 @@
 
 	$: showingEducation = educationScrollY >= (window.innerHeight / 3);
 	$: showingProjects = projectsScrollY >= (window.innerHeight);
-	$: showingTechnologies = technologiesScrollY >= (window.innerHeight * 1.9);
+	$: showingTechnologies = technologiesScrollY >= (window.innerHeight * 1.7);
 
 	window.addEventListener("scroll", () => {
 		if(!showingProjects) {
@@ -30,7 +30,7 @@
 	});
 
 	onMount(async () => {
-		const bulkData = (await axios.get("http://localhost:3000/api/v1/projects")).data;
+		const bulkData = (await axios.get("https://localhost:443/api/v1/projects")).data;
 
 		const keys = Object.keys(bulkData);
 

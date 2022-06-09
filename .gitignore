@@ -1,2 +1,3 @@
 ./server/database.js
 ./server/firebase.js
+./deploy
